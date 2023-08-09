@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+<title>Listagem de produtos</title>
+</head>
+<body>
+
+	<div class="container">
+		<div class="card" th:each="produto : ${produtos}">
+			<div class="card-header" th:text="${produto.nome}"></div>
+			<div class="card-body">
+				<div class="row">
+					<div class="col">
+						<div>
+							Preço:<span th:text="${produto.preco}"></span>
+						</div>
+						<div>
+							Quantidade:<span th:text="${produto.quantidade}"></span>
+						</div>
+						<div>
+							Descrição:<h5 th:text="${produto.descricaoProduto}"></h5>
+						</div>
+					</div>
+					<div class="col">
+						<img alt="imagem do produto" 
+							th:src="${produto.urlImagem}"
+							src="" class="img-thumbnail">
+							
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	
+	
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
