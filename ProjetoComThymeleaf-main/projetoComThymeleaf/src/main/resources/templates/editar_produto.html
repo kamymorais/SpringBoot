@@ -5,12 +5,12 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
-<title>Cadastrar produtos</title>
+<title>Editar produtos</title>
 </head>
 <body>
 
 	<div class="container">
-        <form action="#" th:action="@{/adicionarProduto}" th:object="${produto}" class ="needs-validation"  method="POST" style = "margin: 50px auto; width: 300px; padding: 10px 20px">
+        <form action="#" th:action="@{/atualizar/{id}(id=${produto.id})}" th:object="${produto}" class ="needs-validation"  method="POST" style = "margin: 50px auto; width: 300px; padding: 10px 20px">
         
             <div class="mb-3">
                 <label class="form-label" for="nome">Nome do Produto:</label>
