@@ -10,39 +10,37 @@
 <body>
 
 	<div class="container">
-        <form action="#" th:action="@{/atualizar/{id}(id=${produto.id})}" th:object="${produto}" class ="needs-validation"  method="POST" style = "margin: 50px auto; width: 300px; padding: 10px 20px">
-        
+        <form action="#" th:action="@{/atualizar/{id}(id=${produto.id})}" th:object="${produto}" class="needs-validation form-control" method="POST" style="margin: 50px auto; width: 300px; padding: 10px ">
             <div class="mb-3">
                 <label class="form-label" for="nome">Nome do Produto:</label>
                 <input class="form-control" type="text" name="" id="nome" th:field="*{nome}" placeholder="Digite o nome do produto!">
-                <span th:if ="${#fields.hasErrors('nome')}" th:errors = "*{nome}"></span>
-                
+                <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="descricaoProduto">Descrição do Produto:</label>
                 <input class="form-control" type="text" name="" id="descricaoProduto" th:field="*{descricaoProduto}" placeholder="Digite a descrição do produto!">
-                 <span th:if ="${#fields.hasErrors('descricaoProduto')}" th:errors = "*{descricaoProduto}"></span>
-                 
+                <span th:if="${#fields.hasErrors('descricaoProduto')}" th:errors="*{descricaoProduto}"></span>
+
             </div>
             <div class="mb-3">
                 <label class="form-label" for="quantidade">Quantidade:</label>
                 <input class="form-control" type="text" name="" id="quantidade" th:field="*{quantidade}" placeholder="">
-                 <span th:if ="${#fields.hasErrors('quantidade')}" th:errors = "*{quantidade}"></span>
-                 
+                <span th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}"></span>
+
             </div>
             <div class="mb-3">
                 <label class="form-label" for="preco">Valor:</label>
                 <input class="form-control" type="text" name="" id="preco" th:field="*{preco}" placeholder="">
-                 <span th:if ="${#fields.hasErrors('preco')}" th:errors = "*{preco}"></span>
-                 
+                <span th:if="${#fields.hasErrors('preco')}" th:errors="*{preco}"></span>
+
             </div>
             <div class="mb-3">
                 <label class="form-label" for="urlImagem">Imagem do Produto:</label>
                 <input class="form-control" type="text" name="" id="urlImagem" th:field="*{urlImagem}" placeholder="https://www.google.com">
-        		<span th:if ="${#fields.hasErrors('urlImagem')}" th:errors = "*{urlImagem}"></span>
-        		
+                <span th:if="${#fields.hasErrors('urlImagem')}" th:errors="*{urlImagem}"></span>
+
             </div>
-           <button type="submit" class="btn btn-dark">Cadastrar</button>
+           <button type="submit" class ="btn btn-outline-warning " style="margin-left: 100px;"  >Cadastrar</button>
         </form>
 	</div>
 	

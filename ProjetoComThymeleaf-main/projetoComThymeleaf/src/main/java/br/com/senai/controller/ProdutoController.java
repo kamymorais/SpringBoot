@@ -52,7 +52,7 @@ public class ProdutoController {
 	@GetMapping ("/editar/{id}")
 	public String paginaAtualizarProduto (@PathVariable("id") long id, Model model) {
 		Produto produto = produtoRepository.findById(id).orElseThrow (() -> new IllegalArgumentException("Identidicador do produto é inválido!" + id));
-		model.addAttribute("produtos", produto);
+		model.addAttribute("produto", produto);
 		return "editar_produto";
 	
 	}
@@ -69,4 +69,13 @@ public class ProdutoController {
 		
 	}
 	
+	@GetMapping("/delete/{id}")
+	public String deletarProduto(@PathVariable("id") long id, Model model) {
+		Produto produto = produtoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Identificador do produto é inválido!" + id));
+		produtoRepository.delete(produto);
+		
+		return "redirect:/produto";
+
+		
+	}
 }
